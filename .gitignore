@@ -26,3 +26,7 @@
 *.exe
 *.out
 *.app
+millionaire/ProjectMillionare.bdsproj
+millionaire/ProjectMillionare.bdsproj.local
+millionaire/Debug_Build/
+millionaire/__history/
