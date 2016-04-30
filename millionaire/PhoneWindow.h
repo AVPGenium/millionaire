@@ -9,6 +9,11 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
+#include <string>
+#include <vector>
+#include <utility>
+
+using namespace std;
 //---------------------------------------------------------------------------
 class TFormHelpPhone : public TForm
 {
@@ -41,11 +46,25 @@ __published:	// IDE-managed Components
 	TImage *friend5Phone;
 	TImage *friend6Phone;
 	TImage *friend7Phone;
+	// Событие: наведена мышь на кнопку звонка другу
 	void __fastcall friendPhoneMouseEnter(TObject *Sender);
+	// Событие: мышь ушла с кнопки звонка другу
 	void __fastcall friendPhoneMouseLeave(TObject *Sender);
+	// Событие: нажата кнопка звонка другу
+	void __fastcall friendPhoneClick(TObject *Sender);
 private:	// User declarations
+	// ответ друга на вопрос
+	string friendAnswer;
+	// друзья и их описания
+	vector<pair<string, string> > *friends;
+	// фразы друзей
+	vector<string> *phrases;
+	// загрузка данных о друзьях и их фразах
+	void loadData();
 public:		// User declarations
 	__fastcall TFormHelpPhone(TComponent* Owner);
+	// инициализация ответа друга на вопрос
+	void InitComponents(string *friendAnswer);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormHelpPhone *FormHelpPhone;

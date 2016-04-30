@@ -33,6 +33,7 @@ public:
 class BaseGame{
 	// набор вопросов дл€ текущего сеанса игры
 	Question* questions;
+	// экземпл€р класса дл€ перемешивани€ вариантов ответа на вопрос
 	AnswerOrder* answerOrder;
 	// текущее игровое состо€ние (є текущего вопроса)
 	int currentState;

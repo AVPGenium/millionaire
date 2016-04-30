@@ -7679,10 +7679,12 @@ object FormHelpPhone: TFormHelpPhone
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000191513000000}
+    OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend2Phone: TImage
+    Tag = 1
     Left = 130
     Top = 229
     Width = 167
@@ -8147,10 +8149,12 @@ object FormHelpPhone: TFormHelpPhone
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000191513000000}
+    OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend3Phone: TImage
+    Tag = 2
     Left = 130
     Top = 349
     Width = 167
@@ -8615,10 +8619,12 @@ object FormHelpPhone: TFormHelpPhone
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000191513000000}
+    OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend4Phone: TImage
+    Tag = 4
     Left = 130
     Top = 469
     Width = 167
@@ -9083,10 +9089,12 @@ object FormHelpPhone: TFormHelpPhone
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000191513000000}
+    OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend5Phone: TImage
+    Tag = 5
     Left = 450
     Top = 109
     Width = 167
@@ -9551,10 +9559,12 @@ object FormHelpPhone: TFormHelpPhone
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000191513000000}
+    OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend6Phone: TImage
+    Tag = 6
     Left = 450
     Top = 229
     Width = 167
@@ -10019,10 +10029,12 @@ object FormHelpPhone: TFormHelpPhone
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000191513000000}
+    OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend7Phone: TImage
+    Tag = 7
     Left = 450
     Top = 349
     Width = 167
@@ -10487,6 +10499,7 @@ object FormHelpPhone: TFormHelpPhone
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000191513000000}
+    OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
   end

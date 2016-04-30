@@ -133,7 +133,40 @@ void BaseGame::processRoomHelp(){
 }
 
 void BaseGame::processFriendHelp(){
-
+	int c = rand() % 100;
+	string* friendAnswer =new string();
+	if(currentState<5){
+		if(c < 85){
+			*friendAnswer=questions[currentState].getRightAnswer();
+		} else if((100 - c) % 3 == 0){
+			*friendAnswer=questions[currentState].getAnswer2();
+		} else if((100 - c) % 3 == 1){
+			*friendAnswer=questions[currentState].getAnswer3();
+		} else{
+			*friendAnswer=questions[currentState].getAnswer4();
+		}
+	} else if(currentState>=5 && currentState<10){
+		if(c < 55){
+			*friendAnswer=questions[currentState].getRightAnswer();
+		} else if((100 - c) % 3 == 0){
+			*friendAnswer=questions[currentState].getAnswer2();
+		} else if((100 - c) % 3 == 1){
+			*friendAnswer=questions[currentState].getAnswer3();
+		} else{
+			*friendAnswer=questions[currentState].getAnswer4();
+		}
+	} else if(currentState>=10){
+		if(c < 25){
+			*friendAnswer=questions[currentState].getRightAnswer();
+		} else if((100 - c) % 3 == 0){
+			*friendAnswer=questions[currentState].getAnswer2();
+		} else if((100 - c) % 3 == 1){
+			*friendAnswer=questions[currentState].getAnswer3();
+		} else{
+			*friendAnswer=questions[currentState].getAnswer4();
+		}
+	}
+	FormHelpPhone->InitComponents(friendAnswer);
 }
 
 void BaseGame::processFiftyFiftyHelp(){
