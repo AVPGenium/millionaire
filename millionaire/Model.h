@@ -30,6 +30,10 @@ public:
 	string getAnswer2(){ return answer2;}
 	string getAnswer3(){ return answer3;}
 	string getAnswer4(){ return answer4;}
+	void setRightAnswer(string rightAnswer){ this->rightAnswer=rightAnswer;}
+	void setAnswer2(string answer2){ this->answer2=answer2;}
+	void setAnswer3(string answer3){ this->answer3=answer3;}
+	void setAnswer4(string answer4){ this->answer4=answer4;}
 };
 
 class Level{

@@ -52,7 +52,7 @@ __published:	// IDE-managed Components
 	void __fastcall answerImageMouseEnter(TObject *Sender);
 	void __fastcall answerImageMouseLeave(TObject *Sender);
 	void __fastcall aboutMainMenuClick(TObject *Sender);
-	void __fastcall helpFriendImageClick(TObject *Sender);
+	void __fastcall helpImageClick(TObject *Sender);
 	void __fastcall answerImageClick(TObject *Sender);
 	void __fastcall startGameMenuItemClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);

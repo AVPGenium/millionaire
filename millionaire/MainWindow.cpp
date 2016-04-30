@@ -59,9 +59,26 @@ void __fastcall TFormMain::aboutMainMenuClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormMain::helpFriendImageClick(TObject *Sender)
+void __fastcall TFormMain::helpImageClick(TObject *Sender)
 {
-	FormHelpPhone->ShowModal();
+	string senderName = ((TImage*)Sender)->Name.c_str();
+	if(senderName == "help5050Label"){
+		help5050Label->Picture->LoadFromFile("resources\\images\\50_used.bmp");
+		presenter->OnHelpClick(3);
+		string *answers = presenter->getCurrentQuestion();
+		answer1TextLabel->Caption =  AnsiString(answers[1].c_str());
+		answer2TextLabel->Caption =  AnsiString(answers[2].c_str());
+		answer3TextLabel->Caption =  AnsiString(answers[3].c_str());
+		answer4TextLabel->Caption =  AnsiString(answers[4].c_str());
+	} else if(senderName == "helpRoomImage"){
+		helpRoomImage->Picture->LoadFromFile("resources\\images\\help_used.bmp");
+		presenter->OnHelpClick(1);
+	} else if(senderName == "helpFriendImage"){
+		helpFriendImage->Picture->LoadFromFile("resources\\images\\phone_used.bmp");
+		presenter->OnHelpClick(2);
+	} else if(senderName == "getMoneyImage"){
+		presenter->OnHelpClick(4);
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -123,6 +140,9 @@ void TFormMain::answerImageClick(int answerIndex){
 void __fastcall TFormMain::startGameMenuItemClick(TObject *Sender)
 {
 	currentWinImage->Top = 312;
+	help5050Label->Picture->LoadFromFile("resources\\images\\50.bmp");
+	helpRoomImage->Picture->LoadFromFile("resources\\images\\help.bmp");
+	helpFriendImage->Picture->LoadFromFile("resources\\images\\phone.bmp");
 	presenter->OnGameStartClick();
 	loadNextQuestion();
 }

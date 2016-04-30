@@ -52,11 +52,23 @@ string AnswerOrder::getAnswerByName(Question question, string answerName){
 		return NULL;
 }
 
+int* AnswerOrder::mixRoomAnswers(int* answers){
+	for(int i = 0; i < 4; i++){
+		if(order[i] == "rightAnswer"){
+			int temp = answers[i];
+			answers[i] = answers[0];
+			answers[0] = temp;
+			break;
+		}
+	}
+	return answers;
+}
+
 bool AnswerOrder::isAnswerTrue(int index){
 	return order[index] == "rightAnswer" ? true : false;
 }
 
-BaseGame::BaseGame(Question* questions){
+BaseGame::BaseGame(Question* questions): isFiftyFiftyAvialable(true), isFriendAvialable(true), isRoomHelpAvialable(true){
 	this->questions = questions;
 	currentState = -1;
 	loadGameWinSums();
@@ -98,6 +110,79 @@ void BaseGame::processGameOver(){
     }
 }
 
+void BaseGame::processRoomHelp(){
+	int* answers = new int[4];
+	if(currentState<5){
+		answers[0]=rand()%10 + 85;
+		answers[1]=rand()%(100-answers[0] + 1);
+		answers[2]=rand()%(100-answers[0]-answers[1]+ 1);
+		answers[3]=100-answers[0]-answers[1]-answers[2];
+	} else if(currentState>=5 && currentState<10){
+		answers[0]=rand()%10 + 45;
+		answers[1]=rand()%(100-answers[0] + 1);
+		answers[2]=rand()%(100-answers[0]-answers[1] + 1);
+		answers[3]=100-answers[0]-answers[1]-answers[2];
+	} else if(currentState>=10){
+		answers[0]=rand()%10 + 20;
+		answers[1]=rand()%(100-answers[0] + 1);
+		answers[2]=rand()%(100-answers[0]-answers[1] + 1);
+		answers[3]=100-answers[0]-answers[1]-answers[2] ;
+	}
+	answers = answerOrder->mixRoomAnswers(answers);
+	FormHelpRoom->InitComponents(answers, getCurrentQuestion());
+}
+
+void BaseGame::processFriendHelp(){
+
+}
+
+void BaseGame::processFiftyFiftyHelp(){
+   int c=rand()%10;
+   if(c<3){
+		questions[currentState].setAnswer2("");
+		questions[currentState].setAnswer3("");
+   } else if(c>=3 && c<=6){
+		questions[currentState].setAnswer2("");
+		questions[currentState].setAnswer4("");
+   } else if(c>6){
+		questions[currentState].setAnswer3("");
+		questions[currentState].setAnswer4("");
+   }
+}
+
+void BaseGame::getMoneyAndLeave(){
+	if(gameOver){
+		return;
+	}
+	processGameOver();
+}
+
+void BaseGame::getRoomHelp(){
+	if(!isRoomHelpAvialable){
+		return;
+	}
+	processRoomHelp();
+	FormHelpRoom->ShowModal();
+	isRoomHelpAvialable=false;
+}
+
+void BaseGame::getFriendHelp(){
+	if(!isFriendAvialable){
+		return;
+	}
+	processFriendHelp();
+	FormHelpPhone->ShowModal();
+	isFriendAvialable=false;
+}
+
+void BaseGame::getFiftyFiftyHelp(){
+	if(!isFiftyFiftyAvialable){
+		return;
+	}
+	processFiftyFiftyHelp();
+	isFiftyFiftyAvialable=false;
+}
+
 string* BaseGame::getNextQuestion(){
 	answerOrder = new AnswerOrder(true);
 	currentState++;
@@ -111,6 +196,18 @@ string* BaseGame::getNextQuestion(){
 	   nextQuestion[i+1]=answerOrder->getAnswerByIndex(questions[currentState], i);
 	}
 	return nextQuestion;
+}
+
+string* BaseGame::getCurrentQuestion(){
+	if(currentState >= 15){
+		return NULL;
+	}
+	string* currentQuestion = new string[5];
+	currentQuestion[0] = questions[currentState].getQuestionText();
+	for(int i = 0; i < 4; i++){
+	   currentQuestion[i+1]=answerOrder->getAnswerByIndex(questions[currentState], i);
+	}
+	return currentQuestion;
 }
 
 bool BaseGame::isAnswerTrue(int index){
@@ -146,6 +243,8 @@ bool Presenter::OnHelpClick(int helpType){
 		case 2: gameLogic->getFriendHelp();
 				break;
 		case 3: gameLogic->getFiftyFiftyHelp();
+				break;
+		case 4: gameLogic->getMoneyAndLeave();
 				break;
 	}
 }

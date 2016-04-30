@@ -8,27 +8,33 @@
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
+#include <string>
+
+using namespace std;
 
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TFormHelpRoom : public TForm
 {
 __published:	// IDE-managed Components
-	TShape *ShapeAnswer1;
 	TShape *ShapeAnswer2;
-	TShape *ShapeAnswer4;
 	TShape *ShapeAnswer3;
+	TShape *ShapeAnswer4;
+	TShape *ShapeAnswer1;
 	TLabel *LabelAnswer1;
 	TLabel *LabelAnswer2;
 	TLabel *LabelAnswer3;
 	TLabel *LabelAnswer4;
 	TLabel *Label1;
-	void __fastcall FormShow(TObject *Sender);
+	TLabel *LabelAnswer1Text;
+	TLabel *LabelAnswer2Text;
+	TLabel *LabelAnswer3Text;
+	TLabel *LabelAnswer4Text;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
-	void InitComponents(int* answersPercent);
+	__fastcall TFormHelpRoom(TComponent* Owner);
+	void InitComponents(int* answersPercents, string* answersTitles);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TFormHelpRoom *FormHelpRoom;
 //---------------------------------------------------------------------------
 #endif

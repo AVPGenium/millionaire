@@ -10,7 +10,7 @@ USEFORM("PhoneWindow.cpp", FormHelpPhone);
 USEFORM("AboutWindow.cpp", FormAboutWindow);
 USEFORM("WinWindow.cpp", FormWinWindow);
 USEFORM("LoseWindow.cpp", FormLoseWindow);
-USEFORM("RoomWindow.cpp", Form1);
+USEFORM("RoomWindow.cpp", FormHelpRoom);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -23,7 +23,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		Application->CreateForm(__classid(TFormAboutWindow), &FormAboutWindow);
 		Application->CreateForm(__classid(TFormWinWindow), &FormWinWindow);
 		Application->CreateForm(__classid(TFormLoseWindow), &FormLoseWindow);
-		Application->CreateForm(__classid(TForm1), &Form1);
+		Application->CreateForm(__classid(TFormHelpRoom), &FormHelpRoom);
 		Application->Run();
 	}
 	catch (Exception &exception)

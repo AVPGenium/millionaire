@@ -22,6 +22,7 @@ public:
 	string getAnswerByIndex(Question question, int i);
     // ¬озвращает текст вопроса по его номерной строке("answer1", "answer2", ...)
 	string getAnswerByName(Question question, string answerName);
+	int* mixRoomAnswers(int* answers);
 	// ѕровер€ет, правильность ответа по индексу
 	bool isAnswerTrue(int index);
 };
@@ -49,9 +50,17 @@ class BaseGame{
 	void loadGameWinSums();
 	// обработка окончани€ игры
 	void processGameOver();
+	// обработка подсказки "ѕомощь зала"
+	void processRoomHelp();
+	// обработка оподсказки "«вонок другу"
+	void processFriendHelp();
+	// обработка подсказки "50 на 50"
+	void processFiftyFiftyHelp();
 public:
 	BaseGame(){}
 	BaseGame(Question* questions);
+    // получить текущий вопрос
+	string* getCurrentQuestion();
 	// получить следующий вопрос
 	string* getNextQuestion();
 	// получить подсказку "ѕомощь зала"
@@ -60,6 +69,8 @@ public:
 	void getFriendHelp();
 	// получить подсказку "50 на 50"
 	void getFiftyFiftyHelp();
+	// получить деньги и закончить игру
+	void getMoneyAndLeave();
 	/*
 	* 	узнать, окончена ли игра
 	* 	@return true, если игра окончена, и false, если нет
@@ -81,14 +92,28 @@ class Presenter{
 	BaseGame* gameLogic;
 public:
 	Presenter();
-	// ќбработка действи€ на нажатие кнопок ответов во View
+	/*
+	 * ќбработка действи€ на нажатие кнопок ответов во View
+	 * @param answerIndex - »ндекс данного ответа
+	 * @return true, если удалось успешно обработать ответ, и false, если нет
+	 */
 	bool OnAnswerClick(int answerIndex);
-	// ќбработка действи€ на нажатие кнопок подсказок во View
+	/*
+	 * ќбработка действи€ на нажатие кнопок подсказок во View
+	 * @param helpType - вид выбранной подсказки
+	 * @return true, если удалось успешно выполнить подсказку, и false, если нет
+	 */
 	bool OnHelpClick(int helpType);
-	// ќбработка действи€ на нажатие кнопки "Ќачать игру" во View
+	/* ќбработка действи€ на нажатие кнопки "Ќачать игру" во View
+	*  @return true, если удалось начать сеанс новой игры, и false, если нет
+	*/
 	bool OnGameStartClick();
-	// ¬озвращает "«акончена ли игра?" во View
+	/* ¬озвращает "«акончена ли игра?" во View
+	 * @return true, если игра окончена, и false, если нет
+	 */
 	bool isGameOver(){return gameLogic->isGameOver();}
 	// ¬озвращает текстовые данные следующего вопроса во View
 	string* getNextQuestion(){ return gameLogic->getNextQuestion();}
+    // ¬озвращает текстовые данные текущего вопроса во View
+	string* getCurrentQuestion(){ return gameLogic->getCurrentQuestion();}
 };
