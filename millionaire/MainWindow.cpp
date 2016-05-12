@@ -154,3 +154,9 @@ void __fastcall TFormMain::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::MenuItemExitClick(TObject *Sender)
+{
+	Close();
+}
+//---------------------------------------------------------------------------
+

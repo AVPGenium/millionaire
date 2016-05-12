@@ -37939,11 +37939,28 @@ object FormAboutWindow: TFormAboutWindow
   end
   object Label3: TLabel
     Left = 24
-    Top = 64
+    Top = 88
     Width = 297
     Height = 25
     AutoSize = False
     Caption = '(c) 2016'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clYellow
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+    WordWrap = True
+  end
+  object Label4: TLabel
+    Left = 45
+    Top = 65
+    Width = 281
+    Height = 25
+    Alignment = taCenter
+    AutoSize = False
+    Caption = #1089#1090#1091#1076#1077#1085#1090' '#1075#1088#1091#1087#1087#1099' '#1052#1052#1080#1050#1053'-382'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clYellow
     Font.Height = -16

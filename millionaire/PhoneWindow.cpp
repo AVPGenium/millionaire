@@ -112,3 +112,22 @@ void __fastcall TFormHelpPhone::friendPhoneClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormHelpPhone::FormShow(TObject *Sender)
+{
+	friend1NameLabel->Caption =  (*friends)[0].first.c_str();
+	friend1InfoMemo->Text = (*friends)[0].second.c_str();
+	friend2NameLabel->Caption =  (*friends)[1].first.c_str();
+	friend2InfoMemo->Text = (*friends)[1].second.c_str();
+	friend3NameLabel->Caption =  (*friends)[2].first.c_str();
+	friend3InfoMemo->Text = (*friends)[2].second.c_str();
+	friend4NameLabel->Caption =  (*friends)[3].first.c_str();
+	friend4InfoMemo->Text = (*friends)[3].second.c_str();
+	friend5NameLabel->Caption =  (*friends)[4].first.c_str();
+	friend5InfoMemo->Text = (*friends)[4].second.c_str();
+	friend6NameLabel->Caption =  (*friends)[5].first.c_str();
+	friend6InfoMemo->Text = (*friends)[5].second.c_str();
+	friend7NameLabel->Caption =  (*friends)[6].first.c_str();
+	friend7InfoMemo->Text = (*friends)[6].second.c_str();
+}
+//---------------------------------------------------------------------------
+

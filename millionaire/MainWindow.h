@@ -10,6 +10,7 @@
 #include <Menus.hpp>
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
+#include <Buttons.hpp>
 //---------------------------------------------------------------------------
 class TFormMain : public TForm
 {
@@ -54,6 +55,8 @@ __published:	// IDE-managed Components
 	TLabel *LabelWin12;
 	TLabel *LabelWin11;
 	TImage *currentWinImage;
+	TMenuItem *MenuItemExit;
+	TMenuItem *N1;
 	// Событие: наведена мышь на кнопку ответа на вопрос
 	void __fastcall answerImageMouseEnter(TObject *Sender);
 	// Событие: мышь ушла с кнопки ответа на вопрос
@@ -67,6 +70,7 @@ __published:	// IDE-managed Components
 		// Событие: выбран пункт меню "Начать новую игру"
 	void __fastcall startGameMenuItemClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
+	void __fastcall MenuItemExitClick(TObject *Sender);
 private:	// User declarations
 	// Загрузка текста следующего вопроса и вариантов ответа на него в эл-ты формы
 	void loadNextQuestion();

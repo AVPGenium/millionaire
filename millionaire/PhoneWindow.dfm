@@ -11,6 +11,7 @@ object FormHelpPhone: TFormHelpPhone
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   DesignSize = (
     708
     554)
@@ -7102,118 +7103,6 @@ object FormHelpPhone: TFormHelpPhone
     Transparent = True
     WordWrap = True
   end
-  object friend1InfoLabel: TLabel
-    Left = 130
-    Top = 57
-    Width = 179
-    Height = 18
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = #1050#1091#1083#1080#1085#1072#1088', '#1087#1086#1083#1080#1090#1080#1082', '#1084#1091#1079#1099#1082#1072#1085#1090
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Height = -13
-    Font.Name = 'Comic Sans MS'
-    Font.Style = []
-    ParentFont = False
-    Transparent = True
-    WordWrap = True
-  end
-  object friend2InfoLabel: TLabel
-    Left = 130
-    Top = 177
-    Width = 121
-    Height = 36
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = #1055#1086#1083#1080#1090#1080#1082', '#1076#1086#1082#1090#1086#1088' '#1092#1080#1083#1086#1089#1086#1092#1089#1082#1080#1093' '#1085#1072#1091#1082
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Height = -13
-    Font.Name = 'Comic Sans MS'
-    Font.Style = []
-    ParentFont = False
-    Transparent = True
-    WordWrap = True
-  end
-  object friend3InfoLabel: TLabel
-    Left = 130
-    Top = 297
-    Width = 141
-    Height = 18
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = #1047#1076#1077#1089#1100' '#1084#1086#1078#1077#1090#1077' '#1073#1099#1090#1100' '#1074#1099
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Height = -13
-    Font.Name = 'Comic Sans MS'
-    Font.Style = []
-    ParentFont = False
-    Transparent = True
-    WordWrap = True
-  end
-  object friend4InfoLabel: TLabel
-    Left = 130
-    Top = 420
-    Width = 141
-    Height = 18
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = #1047#1076#1077#1089#1100' '#1084#1086#1078#1077#1090#1077' '#1073#1099#1090#1100' '#1074#1099
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Height = -13
-    Font.Name = 'Comic Sans MS'
-    Font.Style = []
-    ParentFont = False
-    Transparent = True
-    WordWrap = True
-  end
-  object friend5InfoLabel: TLabel
-    Left = 450
-    Top = 57
-    Width = 108
-    Height = 18
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = #1047#1085#1072#1077#1090' '#1074#1089#1077' '#1086#1090#1074#1077#1090#1099
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Height = -13
-    Font.Name = 'Comic Sans MS'
-    Font.Style = []
-    ParentFont = False
-    Transparent = True
-    WordWrap = True
-  end
-  object friend6InfoLabel: TLabel
-    Left = 450
-    Top = 177
-    Width = 178
-    Height = 36
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = #1042#1072#1096#1072' '#1096#1082#1086#1083#1100#1085#1072#1103' '#1091#1095#1080#1090#1077#1083#1100#1085#1080#1094#1072' '#1092#1080#1079#1080#1082#1080
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Height = -13
-    Font.Name = 'Comic Sans MS'
-    Font.Style = []
-    ParentFont = False
-    Transparent = True
-    WordWrap = True
-  end
-  object friend7InfoLabel: TLabel
-    Left = 450
-    Top = 297
-    Width = 141
-    Height = 18
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = #1047#1076#1077#1089#1100' '#1084#1086#1078#1077#1090#1077' '#1073#1099#1090#1100' '#1074#1099
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWhite
-    Font.Height = -13
-    Font.Name = 'Comic Sans MS'
-    Font.Style = []
-    ParentFont = False
-    Transparent = True
-    WordWrap = True
-  end
   object friend1Phone: TImage
     Left = 130
     Top = 109
@@ -8624,7 +8513,7 @@ object FormHelpPhone: TFormHelpPhone
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend4Phone: TImage
-    Tag = 4
+    Tag = 3
     Left = 130
     Top = 469
     Width = 167
@@ -9094,7 +8983,7 @@ object FormHelpPhone: TFormHelpPhone
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend5Phone: TImage
-    Tag = 5
+    Tag = 4
     Left = 450
     Top = 109
     Width = 167
@@ -9564,7 +9453,7 @@ object FormHelpPhone: TFormHelpPhone
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend6Phone: TImage
-    Tag = 6
+    Tag = 5
     Left = 450
     Top = 229
     Width = 167
@@ -10034,7 +9923,7 @@ object FormHelpPhone: TFormHelpPhone
     OnMouseLeave = friendPhoneMouseLeave
   end
   object friend7Phone: TImage
-    Tag = 7
+    Tag = 6
     Left = 450
     Top = 349
     Width = 167
@@ -10502,5 +10391,131 @@ object FormHelpPhone: TFormHelpPhone
     OnClick = friendPhoneClick
     OnMouseEnter = friendPhoneMouseEnter
     OnMouseLeave = friendPhoneMouseLeave
+  end
+  object friend1InfoMemo: TMemo
+    Left = 130
+    Top = 57
+    Width = 167
+    Height = 46
+    Color = clNone
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Comic Sans MS'
+    Font.Style = []
+    Lines.Strings = (
+      'friend1InfoMemo')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 0
+  end
+  object friend2InfoMemo: TMemo
+    Left = 130
+    Top = 177
+    Width = 167
+    Height = 46
+    Color = clNone
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Comic Sans MS'
+    Font.Style = []
+    Lines.Strings = (
+      'friend1InfoMemo')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 1
+  end
+  object friend3InfoMemo: TMemo
+    Left = 130
+    Top = 297
+    Width = 167
+    Height = 46
+    Color = clNone
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Comic Sans MS'
+    Font.Style = []
+    Lines.Strings = (
+      'friend1InfoMemo')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 2
+  end
+  object friend4InfoMemo: TMemo
+    Left = 130
+    Top = 417
+    Width = 167
+    Height = 46
+    Color = clNone
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Comic Sans MS'
+    Font.Style = []
+    Lines.Strings = (
+      'friend1InfoMemo')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 3
+  end
+  object friend5InfoMemo: TMemo
+    Left = 450
+    Top = 57
+    Width = 167
+    Height = 46
+    Color = clNone
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Comic Sans MS'
+    Font.Style = []
+    Lines.Strings = (
+      'friend1InfoMemo')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 4
+  end
+  object friend6InfoMemo: TMemo
+    Left = 450
+    Top = 177
+    Width = 167
+    Height = 46
+    Color = clNone
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Comic Sans MS'
+    Font.Style = []
+    Lines.Strings = (
+      'friend1InfoMemo')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 5
+  end
+  object friend7InfoMemo: TMemo
+    Left = 450
+    Top = 297
+    Width = 167
+    Height = 46
+    Color = clNone
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Comic Sans MS'
+    Font.Style = []
+    Lines.Strings = (
+      'friend1InfoMemo')
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 6
   end
 end

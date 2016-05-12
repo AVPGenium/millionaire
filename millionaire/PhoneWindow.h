@@ -32,13 +32,6 @@ __published:	// IDE-managed Components
 	TLabel *friend3NameLabel;
 	TLabel *friend7NameLabel;
 	TLabel *friend4NameLabel;
-	TLabel *friend1InfoLabel;
-	TLabel *friend2InfoLabel;
-	TLabel *friend3InfoLabel;
-	TLabel *friend4InfoLabel;
-	TLabel *friend5InfoLabel;
-	TLabel *friend6InfoLabel;
-	TLabel *friend7InfoLabel;
 	TImage *friend1Phone;
 	TImage *friend2Phone;
 	TImage *friend3Phone;
@@ -46,12 +39,20 @@ __published:	// IDE-managed Components
 	TImage *friend5Phone;
 	TImage *friend6Phone;
 	TImage *friend7Phone;
+	TMemo *friend1InfoMemo;
+	TMemo *friend2InfoMemo;
+	TMemo *friend3InfoMemo;
+	TMemo *friend4InfoMemo;
+	TMemo *friend5InfoMemo;
+	TMemo *friend6InfoMemo;
+	TMemo *friend7InfoMemo;
 	// Событие: наведена мышь на кнопку звонка другу
 	void __fastcall friendPhoneMouseEnter(TObject *Sender);
 	// Событие: мышь ушла с кнопки звонка другу
 	void __fastcall friendPhoneMouseLeave(TObject *Sender);
 	// Событие: нажата кнопка звонка другу
 	void __fastcall friendPhoneClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 	// ответ друга на вопрос
 	string friendAnswer;
