@@ -1,2 +1,4 @@
-# millionaire
+# Game "Millionaire"
+
+Игра-викторина
 с++
